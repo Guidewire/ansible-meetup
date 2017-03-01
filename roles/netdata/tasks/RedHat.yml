@@ -1,0 +1,20 @@
+- name:
+  yum: name="{{ item }}"
+  with_items:
+    - epel-release
+    - autoconf
+    - automake
+    - curl
+    - gcc
+    - git
+    - libmnl-devel
+    - libuuid-devel
+    - lm_sensors
+    - make
+    - MySQL-python
+    - nc
+    - pkgconfig
+    - python
+    - python-psycopg2
+    - PyYAML
+    - zlib-devel

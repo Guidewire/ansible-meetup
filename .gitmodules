@@ -1,0 +1,9 @@
+[submodule "roles/vagrant"]
+	path = roles/vagrant
+	url = https://github.com/gitinsky/ansible-role-vagrant.git
+[submodule "inventory/ansible-vagrant-inventory"]
+	path = inventory/ansible-vagrant-inventory
+	url = https://github.com/gitinsky/ansible-vagrant-inventory.git
+[submodule "vaultkeychain"]
+	path = vaultkeychain
+	url = https://github.com/gitinsky/vaultkeychain.git

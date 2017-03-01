@@ -1,0 +1,19 @@
+- include: "{{ ansible_os_family }}.yml"
+
+- git:
+    repo: https://github.com/firehol/netdata.git
+    dest: /opt/netdata-repo
+    depth: 1
+    update: no
+
+- name: Check if netdata is running
+  uri:
+    url: http://127.0.0.1:19999
+  register: netdata_web
+  ignore_errors: true
+  failed_when: no
+  changed_when: "{{ netdata_web.status == -1 }}"
+
+- name: run installer if netdata not running
+  shell: ./netdata-installer.sh chdir=/opt/netdata-repo/
+  when: "{{ netdata_web.changed }}"
